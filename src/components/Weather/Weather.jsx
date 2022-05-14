@@ -9,12 +9,20 @@ import { WiCloud,
          } from 'react-icons/wi'
 import { IconContext } from 'react-icons'
 import { scryRenderedComponentsWithType } from 'react-dom/test-utils'
+
+const validValues =[
+    "cloud",
+    "cloudy",
+    "fog",
+    "sunny",
+    "rain",
+]
 const stateByName = {
-    cloud:WiCloud,
-    cloudy:WiDayCloudy,
-    fog:WiDayFog,
-    sunny:WiDaySunny,
-    rain:WiRain,
+    cloud :WiCloud,
+    cloudy: WiDayCloudy,
+    fog: WiDayFog,
+    sunny: WiDaySunny,
+    rain: WiRain,
 }
 const renderState = state => {
     
@@ -35,7 +43,7 @@ const Weather = ({temperature,state}) => {
 
 Weather.propTypes = {
     temperature: PropTypes.number.isRequired,
-    state: PropTypes.string.isRequired
+    state: PropTypes.oneOf(validValues).isRequired
 }
 
 export default Weather
