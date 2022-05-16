@@ -38,6 +38,7 @@ const CityList = ({cities}) => {
 
 CityList.propTypes = {
     cities: PropTypes.array.isRequired,
+    onClickCity: PropTypes.func.isRequired,
 }
 
 export default CityList
